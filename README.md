@@ -5,6 +5,9 @@
 [![Docker](https://img.shields.io/badge/Docker-Enabled-blue)](https://www.docker.com/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Deployable-blue)](https://kubernetes.io/)
 
+## Advertencia ⚠️
+El backend de esta aplicación consume el servicio `http://dummy.restapiexample.com/api/v1/employees`, el cual ha estado presentando problemas de acceso y, en ocasiones, retorna el código `429 - Too Many Requests`. Esto puede afectar la funcionalidad de la aplicación y generar errores intermitentes en las solicitudes.
+
 ## 📌 Descripción
 EmployeeApp es una API REST construida con **Spring Boot**, empaquetada como un **WAR**, y desplegada en **Tomcat** dentro de **Docker** y **Kubernetes**.  
 Este proyecto implementa **CI/CD con GitHub Actions** para generar el WAR y publicarlo como una imagen Docker en Docker Hub.
