@@ -24,21 +24,48 @@ Este proyecto implementa **CI/CD con GitHub Actions** para generar el WAR y publ
 
 
 ## 📌 **Principios SOLID Implementados**
-✅ **SRP (Single Responsibility Principle)** → Separación clara entre Modelo, Servicio y DTO.  
-✅ **OCP (Open/Closed Principle)** → `EmployeeDTO` permite extender la salida sin modificar el modelo.  
-✅ **LSP (Liskov Substitution Principle)** → Se pueden intercambiar implementaciones sin romper el código.  
-✅ **ISP (Interface Segregation Principle)** → `IEmployeeRepository` y `IEmployeeService` están bien definidos.  
-✅ **DIP (Dependency Inversion Principle)** → `EmployeeService` no depende directamente de `EmployeeRepository`.
+✅ SRP (Single Responsibility Principle)** → Separación clara entre Modelo, Servicio y DTO.  
+✅ OCP (Open/Closed Principle)** → `EmployeeDTO` permite extender la salida sin modificar el modelo.  
+✅ LSP (Liskov Substitution Principle)** → Se pueden intercambiar implementaciones sin romper el código.  
+✅ ISP (Interface Segregation Principle)** → `IEmployeeRepository` y `IEmployeeService` están bien definidos.  
+✅ DIP (Dependency Inversion Principle)** → `EmployeeService` no depende directamente de `EmployeeRepository`.
 ---
 
 ## 📌 Cómo Ejecutar el Proyecto
 Para ejecutar el proyecto localmente, usa el siguiente comando:
 
+1. Descarga el repo BackEnd
+```sh
+git clone https://github.com/jfsolarte/SOLID
+```
+2. inicia con gradle o .gradlew
+
 ```sh
 gradle bootRun
 ```
-
 Esto iniciará la aplicación en `http://localhost:8080`.
+
+3. Ya teniendo el backEnd funcionando podemos continuar con FrontEnd
+
+```sh
+git clone https://github.com/jfsolarte/employee-ui
+cd employee-ui
+
+```
+Modificar `src/environments/environment.ts` para establecer la API base:
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8080/api/employees'
+};
+```
+Dentro de la carpeta con node 18 
+
+```sh
+ ng serve
+```
+La aplicación estará disponible en `http://localhost:4200/`.
+
 
 ---
 
@@ -56,6 +83,7 @@ Si deseas desplegar la aplicación en un servidor **Wildfly**, sigue estos pasos
 4. Accede a la aplicación en `http://localhost:8080/EmployeeApp`.
 
 ---
+## 📌 Despliegue en Wildfly
 
 ## 📌 **Estructura del Proyecto**
 ```plaintext
