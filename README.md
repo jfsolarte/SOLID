@@ -24,11 +24,11 @@ Este proyecto implementa **CI/CD con GitHub Actions** para generar el WAR y publ
 
 
 ## 📌 **Principios SOLID Implementados**
-✅ SRP (Single Responsibility Principle) → Separación clara entre Modelo, Servicio y DTO.  
-✅ OCP (Open/Closed Principle) → `EmployeeDTO` permite extender la salida sin modificar el modelo.  
-✅ LSP (Liskov Substitution Principle) → Se pueden intercambiar implementaciones sin romper el código.  
-✅ ISP (Interface Segregation Principle) → `IEmployeeRepository` y `IEmployeeService` están bien definidos.  
-✅ DIP (Dependency Inversion Principle) → `EmployeeService` no depende directamente de `EmployeeRepository`.
+SRP (Single Responsibility Principle) → Separación clara entre Modelo, Servicio y DTO.  
+OCP (Open/Closed Principle) → `EmployeeDTO` permite extender la salida sin modificar el modelo.  
+LSP (Liskov Substitution Principle) → Se pueden intercambiar implementaciones sin romper el código.  
+SP (Interface Segregation Principle) → `IEmployeeRepository` y `IEmployeeService` están bien definidos.  
+DIP (Dependency Inversion Principle) → `EmployeeService` no depende directamente de `EmployeeRepository`.
 ---
 
 ## 📌 Cómo Ejecutar el Proyecto
