@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  tomcat:
+    image: tomcat:latest
+    container_name: employee-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./../build/libs/EmployeeApp-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+    restart: always

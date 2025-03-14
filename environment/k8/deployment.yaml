@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: employee-app
+  template:
+    metadata:
+      labels:
+        app: employee-app
+    spec:
+      containers:
+        - name: tomcat
+          image: tomcat:latest
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: war-volume
+              mountPath: /usr/local/tomcat/webapps/
+      volumes:
+        - name: war-volume
+          hostPath:
+            path: ./../../build/libs/EmployeeApp-0.0.1-SNAPSHOT.war
+            type: File
